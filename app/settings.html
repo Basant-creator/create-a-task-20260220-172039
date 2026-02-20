@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - TaskMaster Pro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container nav-container">
+            <a href="../public/index.html" class="logo">
+                <i class="fas fa-clipboard-check"></i> TaskMaster Pro
+            </a>
+            <nav class="nav-menu" id="navMenu">
+                <a href="../public/index.html" class="nav-link">Index</a>
+                <a href="../public/login.html" class="nav-link hidden-auth">Login</a>
+                <a href="../public/signup.html" class="nav-link hidden-auth">Signup</a>
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+                <a href="profile.html" class="nav-link">Profile</a>
+                <a href="settings.html" class="nav-link active">Settings</a>
+            </nav>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="user-info">
+                <img src="https://via.placeholder.com/60/6366f1/ffffff?text=U" alt="User Avatar" class="user-avatar">
+                <h3 id="userName">Loading User...</h3>
+                <p id="userEmail" class="text-muted">Loading Email...</p>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="sidebar-link"><i class="fas fa-th-large"></i> Dashboard</a>
+                <a href="profile.html" class="sidebar-link"><i class="fas fa-user-circle"></i> Profile</a>
+                <a href="settings.html" class="sidebar-link active"><i class="fas fa-cog"></i> Settings</a>
+                <hr>
+                <a href="#" class="sidebar-link logout-link" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="dashboard-header">
+                <h1>App Settings</h1>
+            </div>
+
+            <div class="settings-card profile-card">
+                <div id="settingsMessage" class="message-box" style="display: none;"></div>
+
+                <h2>General Settings</h2>
+                <form id="generalSettingsForm" class="profile-form">
+                    <div class="form-group">
+                        <label for="timezone">Timezone</label>
+                        <select id="timezone" name="timezone">
+                            <option value="UTC">UTC</option>
+                            <option value="America/New_York">America/New_York</option>
+                            <option value="Europe/London">Europe/London</option>
+                            <option value="Asia/Tokyo">Asia/Tokyo</option>
+                            <!-- More timezones -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="dateFormat">Date Format</label>
+                        <select id="dateFormat" name="dateFormat">
+                            <option value="MM/DD/YYYY">MM/DD/YYYY</option>
+                            <option value="DD/MM/YYYY">DD/MM/YYYY</option>
+                            <option value="YYYY-MM-DD">YYYY-MM-DD</option>
+                        </select>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary" id="saveGeneralSettingsBtn">
+                            <span id="saveGeneralSettingsBtnText">Save General Settings</span>
+                            <i class="fas fa-spinner fa-spin" id="saveGeneralSettingsSpinner" style="display: none;"></i>
+                        </button>
+                    </div>
+                </form>
+
+                <hr class="form-divider">
+
+                <h2>Notifications</h2>
+                <form id="notificationSettingsForm" class="profile-form">
+                    <div class="form-group">
+                        <label class="checkbox-container">
+                            Email Notifications
+                            <input type="checkbox" id="emailNotifications" name="emailNotifications" checked>
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox-container">
+                            Desktop Notifications
+                            <input type="checkbox" id="desktopNotifications" name="desktopNotifications">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary" id="saveNotificationSettingsBtn">
+                            <span id="saveNotificationSettingsBtnText">Save Notification Settings</span>
+                            <i class="fas fa-spinner fa-spin" id="saveNotificationSettingsSpinner" style="display: none;"></i>
+                        </button>
+                    </div>
+                </form>
+
+                <hr class="form-divider">
+
+                <h2>Account Management</h2>
+                <button type="button" class="btn btn-secondary btn-danger"><i class="fas fa-user-slash"></i> Delete Account</button>
+                <p class="text-muted small-text">This action is irreversible.</p>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2023 TaskMaster Pro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="../public/js/main.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/settings.js"></script> <!-- New script for settings logic -->
+</body>
+</html>
