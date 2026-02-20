@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - TaskMaster Pro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container nav-container">
+            <a href="../public/index.html" class="logo">
+                <i class="fas fa-clipboard-check"></i> TaskMaster Pro
+            </a>
+            <nav class="nav-menu" id="navMenu">
+                <a href="../public/index.html" class="nav-link">Index</a>
+                <a href="../public/login.html" class="nav-link hidden-auth">Login</a>
+                <a href="../public/signup.html" class="nav-link hidden-auth">Signup</a>
+                <a href="dashboard.html" class="nav-link active">Dashboard</a>
+                <a href="profile.html" class="nav-link">Profile</a>
+                <a href="settings.html" class="nav-link">Settings</a>
+            </nav>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="user-info">
+                <img src="https://via.placeholder.com/60/6366f1/ffffff?text=U" alt="User Avatar" class="user-avatar">
+                <h3 id="userName">Loading User...</h3>
+                <p id="userEmail" class="text-muted">Loading Email...</p>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="sidebar-link active"><i class="fas fa-th-large"></i> Dashboard</a>
+                <a href="profile.html" class="sidebar-link"><i class="fas fa-user-circle"></i> Profile</a>
+                <a href="settings.html" class="sidebar-link"><i class="fas fa-cog"></i> Settings</a>
+                <hr>
+                <a href="#" class="sidebar-link logout-link" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="dashboard-header">
+                <h1 id="greeting">Hello, User!</h1>
+                <div class="quick-actions">
+                    <button class="btn btn-primary"><i class="fas fa-plus"></i> New Task</button>
+                    <button class="btn btn-secondary"><i class="fas fa-filter"></i> Filter</button>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i class="fas fa-tasks stat-icon"></i>
+                    <h3>Total Tasks</h3>
+                    <p class="stat-value" id="totalTasks">0</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-hourglass-half stat-icon"></i>
+                    <h3>Pending Tasks</h3>
+                    <p class="stat-value" id="pendingTasks">0</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-check-circle stat-icon"></i>
+                    <h3>Completed Tasks</h3>
+                    <p class="stat-value" id="completedTasks">0</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-calendar-alt stat-icon"></i>
+                    <h3>Due Today</h3>
+                    <p class="stat-value" id="dueToday">0</p>
+                </div>
+            </div>
+
+            <div class="task-list-section">
+                <h2>My Tasks</h2>
+                <div id="tasksContainer" class="task-list">
+                    <!-- Example Task Card -->
+                    <div class="task-card">
+                        <div class="task-header">
+                            <input type="checkbox" class="task-checkbox">
+                            <h4 class="task-title">Finish TaskMaster Pro Frontend</h4>
+                        </div>
+                        <p class="task-description">Complete HTML, CSS, and JS for dashboard, profile, and settings pages, ensuring responsiveness.</p>
+                        <div class="task-meta">
+                            <span class="task-due"><i class="fas fa-calendar-day"></i> Due: 2023-12-31</span>
+                            <span class="task-priority high"><i class="fas fa-flag"></i> High</span>
+                        </div>
+                        <div class="task-actions">
+                            <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                            <button class="btn-icon delete-task"><i class="fas fa-trash-alt"></i></button>
+                        </div>
+                    </div>
+                    <!-- More tasks will be loaded here by JS -->
+                </div>
+                <p id="noTasksMessage" style="text-align: center; margin-top: 2rem; color: #6b7280; display: none;">No tasks found. Start by creating a new one!</p>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2023 TaskMaster Pro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="../public/js/main.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
