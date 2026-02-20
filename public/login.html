@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - TaskMaster Pro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-clipboard-check"></i> TaskMaster Pro
+            </a>
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Index</a>
+                <a href="login.html" class="nav-link active">Login</a>
+                <a href="signup.html" class="nav-link">Signup</a>
+                <a href="app/dashboard.html" class="nav-link hidden-auth">Dashboard</a>
+                <a href="app/profile.html" class="nav-link hidden-auth">Profile</a>
+                <a href="app/settings.html" class="nav-link hidden-auth">Settings</a>
+            </nav>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main class="auth-page">
+        <div class="auth-container">
+            <form id="loginForm" class="auth-form">
+                <h2>Login to TaskMaster Pro</h2>
+                <div id="errorMessage" class="error-message" style="display: none;"></div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    <div class="validation-feedback" id="emailFeedback"></div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                    <div class="validation-feedback" id="passwordFeedback"></div>
+                </div>
+                <div class="form-options">
+                    <label class="checkbox-container">
+                        Remember me
+                        <input type="checkbox" id="rememberMe" name="rememberMe">
+                        <span class="checkmark"></span>
+                    </label>
+                    <a href="#" class="forgot-password">Forgot password?</a>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block" id="loginBtn">
+                    <span id="loginBtnText">Login</span>
+                    <i class="fas fa-spinner fa-spin" id="loginSpinner" style="display: none;"></i>
+                </button>
+                <p class="auth-switch">Don't have an account? <a href="signup.html">Sign Up</a></p>
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2023 TaskMaster Pro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>
